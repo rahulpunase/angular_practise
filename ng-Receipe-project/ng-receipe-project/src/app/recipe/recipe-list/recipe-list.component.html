@@ -1,0 +1,19 @@
+<div class="row">
+  <hr>
+</div>
+<div class="row">
+  <div class="col-xl-12">
+    <button class="btn btn-success">New Recipe</button>
+  </div>
+</div>
+<div class="row">
+  <hr>
+</div>
+<div class="row">
+  <div class="col-xl-12">
+    <!--<div class="div">Item Element removed from here</div>-->
+    <!--have to pass the data inside the component-->
+    <app-recipe-item (recipeSelected)="onRecipeSelect(recipeOfIndex)"  [recipe]="recipeOfIndex"  *ngFor="let recipeOfIndex of recipes"></app-recipe-item>
+  </div>
+</div>
+

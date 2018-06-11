@@ -1,0 +1,25 @@
+<hr>
+<div>This is server</div>
+<label>Server Name: {{serverName}}</label>
+<input type="text" class="form-control" (input)="onServerNameUpdate($event)">
+<input type="text" class="form-control">
+<hr>
+<div class="row">
+  <button (click)="onServerCreated()" [disabled]="!buttonDisable" class="btn btn-primary">Add Server</button>
+  <button *ngIf="parentIsClicked; else nobutton" class="btn btn-warning">Now you can click me as well</button>
+</div>
+
+<!--If else -->
+
+<ng-template #nobutton>
+  <p>There the button is clicked</p>
+</ng-template>
+
+<p>{{ serverCreation }}</p>
+
+<h1 [ngStyle]="{'color':getColor()}">{{severIsOnline}}</h1>
+<!--ngClass-- Adds class online if certain conditioin is true-->
+<h2 [ngClass]="{online: severIsOnline==='online'}">Got to write something here</h2>
+<!--ngFor also structural directive-->
+<h2 *ngFor="let server of serverarray">{{server}}</h2>
+
